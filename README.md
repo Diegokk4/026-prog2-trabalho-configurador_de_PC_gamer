@@ -1,13 +1,16 @@
 Configurador de PC Gamer
+
 Este projeto consiste em um sistema de configuração de hardware para montagem de PCs gamers, permitindo que o usuário selecione componentes, visualize especificações técnicas, monitore o consumo de energia e desempenho, e exporte um orçamento final.
 
-Integrantes do Grupo
+Integrantes do Grupo:
 Diego Oliveira Ricardo
 
 Tema Escolhido
+
 Configurador de PC Gamer (Desenvolvido no âmbito da disciplina de Programação de Computadores II).
 
 Funcionalidades
+
 Seleção de Hardware: Escolha de processador, memória RAM, placa de vídeo, armazenamento e periféricos via JComboBox.
 Validação em Tempo Real: Atualização automática de especificações em tabelas (JTable) e cálculo de orçamento.
 Monitoramento: Barras de progresso (JProgressBar) indicando consumo de energia (TDP) e Score de desempenho.
@@ -16,6 +19,7 @@ Exportação: Geração de um arquivo .txt contendo o resumo da build configurad
 Design Moderno: Interface estilizada utilizando a biblioteca FlatLaf (Dark Mode).
 
 Tecnologias Utilizadas
+
 Linguagem: Java (JDK 17+)
 Interface Gráfica: Java Swing
 Gerenciamento de Dependências: Apache Maven
