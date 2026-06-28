@@ -3,6 +3,11 @@ package com.mycompany.configurador.view;
 
 import com.mycompany.configurador.model.Peca;
 
+/**
+ * Classe controladora principal da View do Configurador de PC.
+ * Gerencia a interação do usuário, as regras de negócio de montagem 
+ * e a lógica de CRUD das peças.
+ */
 
 public class Principal extends javax.swing.JFrame {
     
@@ -730,6 +735,8 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemExportarActionPerformed
 
     private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
+        // Valida os campos, cria/atualiza o objeto Peca e sincroniza com a lista da categoria
         try {
             String nome = txtAdminNome.getText();
             double preco = Double.parseDouble(txtAdminPreco.getText().replace(",", "."));
@@ -789,6 +796,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbAdminCategoriaActionPerformed
 
     private void tblAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblAdminMouseClicked
+        // Popula os campos de texto com os dados da peça selecionada na tabela para edição
         int linhaSelecionada = tblAdmin.getSelectedRow();
         if (linhaSelecionada != -1) {
             java.util.ArrayList<Peca> listaAtual = getListaCategoriaSelecionada();
@@ -924,7 +932,7 @@ public class Principal extends javax.swing.JFrame {
         
         javax.swing.DefaultListModel<String> modeloLista = new javax.swing.DefaultListModel<>();
 
-        // Verifica o Processador
+        // Verifica o processador. Instanceof verifica se o item selecionado no ComboBox é uma Peca válida (ignorando o item "Selecione...")
         if (cmbProcessador.getSelectedItem() instanceof Peca) {
             Peca proc = (Peca) cmbProcessador.getSelectedItem();
             if (proc.getPreco() > 0) {
@@ -1007,7 +1015,11 @@ public class Principal extends javax.swing.JFrame {
     }
 
     private void sincronizarTudo() {
-        // 1. Atualiza a Tabela de Administração
+        
+        /**
+        * 1. Atualiza a tabela de Administração e mantém a consistência entre o Banco de Dados (ArrayLists) e a Interface (Tabela e ComboBoxes).
+        * Chamado sempre que uma peça é criada, editada ou excluída.
+        */
         java.util.ArrayList<Peca> listaAtual = getListaCategoriaSelecionada();
         javax.swing.table.DefaultTableModel modeloAdmin = (javax.swing.table.DefaultTableModel) tblAdmin.getModel();
         modeloAdmin.setRowCount(0);
@@ -1028,6 +1040,10 @@ public class Principal extends javax.swing.JFrame {
         atualizarResumo();
     }
 
+    /**
+    * Refaz o modelo do ComboBox dinamicamente com base na lista de peças da categoria,
+    * mantendo a seleção atual do usuário caso exista.
+    */
     private void atualizarComboBox(javax.swing.JComboBox<Object> combo, java.util.ArrayList<Peca> lista) {
         Object selecionado = combo.getSelectedItem();
         combo.removeAllItems();
@@ -1051,7 +1067,7 @@ public class Principal extends javax.swing.JFrame {
     }
     
     
-      //Carrega os dados iniciais do sistema para demonstração (Seed Data)
+      //Carrega os dados iniciais do sistema para demonstração 
      
     private void inicializarDadosBase() {
         // Carga de Processadores
