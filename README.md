@@ -1,41 +1,38 @@
-Configurador de PC Gamer
+# 💻 Configurador de PC Gamer
 
-Este projeto consiste em um sistema de configuração de hardware para montagem de PCs gamers, permitindo que o usuário selecione componentes, visualize especificações técnicas, monitore o consumo de energia e desempenho, e exporte um orçamento final.
+Este projeto é um sistema desktop de configuração de hardware para montagem de PCs gamers. Ele permite que o usuário gerencie o catálogo de peças, monte o setup, monitore o consumo de energia em tempo real e exporte o orçamento final.
 
-Integrantes do Grupo:
-Diego Oliveira Ricardo
+## 👥 Integrantes do Grupo
+- Diego Oliveira Ricardo
 
-Tema Escolhido
+## 🎯 Tema Escolhido
+**Configurador de PC Gamer** (Desenvolvido no âmbito da disciplina de Programação de Computadores II).
 
-Configurador de PC Gamer (Desenvolvido no âmbito da disciplina de Programação de Computadores II).
+## 🚀 Funcionalidades (CRUD Implementado)
+- **Painel de Administração (CRUD):** Inserção, edição, exclusão e listagem de peças no catálogo do sistema operando via Banco de Dados em Memória (ArrayLists).
+- **Montagem Dinâmica:** Escolha de processador, memória RAM, placa de vídeo, armazenamento e periféricos com atualização das tabelas de especificações em tempo real.
+- **Monitoramento de Hardware:** Barras de progresso responsivas indicando o consumo de energia (TDP em Watts) e o Score de Desempenho geral da máquina.
+- **Limpeza Rápida:** Botão de reset rápido para zerar a build atual e começar um novo orçamento.
+- **Exportação:** Geração de um arquivo de texto (`.txt`) contendo o orçamento completo e detalhado.
 
-Funcionalidades
+## 🛠️ Tecnologias Utilizadas
+- **Linguagem:** Java (JDK 17+)
+- **Interface Gráfica:** Java Swing
+- **Design Pattern:** MVC (Model-View-Controller)
+- **Gerenciamento de Dependências:** Apache Maven
+- **Estilização UI:** FlatLaf (Dark/Light Mode)
+- **Ambiente de Desenvolvimento:** Apache NetBeans IDE
 
-Seleção de Hardware: Escolha de processador, memória RAM, placa de vídeo, armazenamento e periféricos via JComboBox.
-Validação em Tempo Real: Atualização automática de especificações em tabelas (JTable) e cálculo de orçamento.
-Monitoramento: Barras de progresso (JProgressBar) indicando consumo de energia (TDP) e Score de desempenho.
-Opcionais: Checkboxes para adição de periféricos extras (Cooler, RGB, Garantia).
-Exportação: Geração de um arquivo .txt contendo o resumo da build configurada.
-Design Moderno: Interface estilizada utilizando a biblioteca FlatLaf (Dark Mode).
+## 💻 Instruções para Execução
 
-Tecnologias Utilizadas
+### Pré-requisitos:
+- Tenha o [JDK](https://www.oracle.com/java/technologies/downloads/) instalado e configurado no seu ambiente.
+- Tenha o [Apache NetBeans IDE](https://netbeans.apache.org/) instalado.
 
-Linguagem: Java (JDK 17+)
-Interface Gráfica: Java Swing
-Gerenciamento de Dependências: Apache Maven
-Estilização: FlatLaf
-Ambiente de Desenvolvimento: Apache NetBeans IDE
-
-Instruções para Execução
-
-Pré-requisitos:
-Tenha o JDK (https://www.oracle.com/java/technologies/downloads/) instalado e configurado no seu ambiente.
-Tenha o Apache NetBeans IDE (https://netbeans.apache.org/) instalado.
-
-Como executar:
-Clone este repositório para sua máquina local.
-Abra o NetBeans e vá em Arquivo > Abrir Projeto.
-Selecione a pasta raiz deste projeto.
-Aguarde o Maven realizar o download das dependências (FlatLaf).
-Localize a classe Configurador.java dentro do pacote com.mycompany.configurador.
-Clique com o botão direito na classe e selecione "Executar Arquivo" (ou pressione Shift + F6).
+### Como executar:
+1. Clone este repositório para sua máquina local.
+2. Abra o NetBeans e vá em `Arquivo` > `Abrir Projeto`.
+3. Selecione a pasta raiz deste projeto.
+4. Aguarde o Maven realizar o download das dependências (FlatLaf).
+5. Localize a classe `Configurador.java` dentro do pacote `com.mycompany.configurador`.
+6. Clique com o botão direito na classe e selecione **"Executar Arquivo"** (ou pressione `Shift + F6`).
